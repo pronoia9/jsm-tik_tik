@@ -1,8 +1,14 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from 'next/app';
+import { useState, useEffect } from 'react';
+import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  // server side rendering check, only render if its client side
+  const [isSSR, setIsSSR] = useState(true);
+  useEffect(() => { setIsSSR(false); }, [])
+  if (isSSR) return null;
+
+  return <Component {...pageProps} />;
 }
 
-export default MyApp
+export default MyApp;
