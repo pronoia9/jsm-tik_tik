@@ -1,18 +1,17 @@
 import React from 'react';
 import axios from 'axios';
 
-// import VideoCard from '../components/VideoCard';
+import { Video } from '../types';
 // import { BASE_URL } from '../utils';
-// import { Video } from '../types';
+// import VideoCard from '../components/VideoCard';
 // import NoResults from '../components/NoResults';
 
-// interface IProps {
-//   // videos: Video[];
-//   videos: [];
-// }
+interface IProps {
+  videos: Video[];
+}
 
-// const Home = ({ videos }: IProps) => {
-const Home = () => {
+const Home = ({ videos }: IProps) => {
+  console.log(videos);
   return (
     <div className='flex flex-col gap-10 videos h-full'>
       {/* {videos.length ? (
