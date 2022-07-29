@@ -15,9 +15,9 @@ interface IProps {
 
 const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes } }) => {
   // const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes }, isShowingOnHome }) => {
-  // const [playing, setPlaying] = useState(false);
   const [isHover, setIsHover] = useState(false);
-  // const [isVideoMuted, setIsVideoMuted] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const [isVideoMuted, setIsVideoMuted] = useState(false);
   // const videoRef = useRef<HTMLVideoElement>(null);
 
   // const onVideoPress = () => {
@@ -96,14 +96,14 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
           </Link>
 
           {/* Playback buttons */}
-          {/* {isHover && (
+          {isHover && (
             <div className='absolute bottom-6 cursor-pointer left-8 md:left-14 lg:left-0 flex gap-10 lg:justify-between w-[100px] md:w-[50px] lg:w-[600px] p-3'>
               {playing ? (
-                <button onClick={onVideoPress}>
+                <button onClick={() => 'onVideoPress'}>
                   <BsFillPauseFill className='text-black text-2xl lg:text-4xl' />
                 </button>
               ) : (
-                <button onClick={onVideoPress}>
+                <button onClick={() => 'onVideoPress'}>
                   <BsFillPlayFill className='text-black text-2xl lg:text-4xl' />
                 </button>
               )}
@@ -117,7 +117,7 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
                 </button>
               )}
             </div>
-          )} */}
+          )}
         </div>
       </div>
     </div>
