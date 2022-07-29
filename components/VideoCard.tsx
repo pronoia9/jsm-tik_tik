@@ -20,15 +20,15 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
   const [isVideoMuted, setIsVideoMuted] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // const onVideoPress = () => {
-  //   if (playing) {
-  //     videoRef?.current?.pause();
-  //     setPlaying(false);
-  //   } else {
-  //     videoRef?.current?.play();
-  //     setPlaying(true);
-  //   }
-  // };
+  const onVideoPress = () => {
+    if (playing) {
+      videoRef?.current?.pause();
+      setPlaying(false);
+    } else {
+      videoRef?.current?.play();
+      setPlaying(true);
+    }
+  };
 
   // useEffect(() => {
   //   if (videoRef?.current) {
@@ -63,7 +63,7 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
             {/* Avatar */}
             <Link href={`/profile/\${postedBy?._id}`}>
               <>
-                <Image width={62} height={62} className='rounded-full' src={postedBy.image} alt='user-profile' layout='responsive' />
+                <Image width={62} height={62} className='rounded-full' src={postedBy?.image} alt='user-profile' layout='responsive' />
               </>
             </Link>
           </div>
