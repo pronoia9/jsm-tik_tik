@@ -30,7 +30,7 @@ const Sidebar: NextPage = () => {
             <Link href='/'>
               <div
                 className={
-                  `flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded  text-[#F51997]` /* ${pathname === '/' ? ' text-[#F51997]' : ''} */
+                  `flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded  text-[#F51997]` /* ${pathname === '/' && ' text-[#F51997]'} */
                 }>
                 <p className='text-2xl'>
                   <AiFillHome />
