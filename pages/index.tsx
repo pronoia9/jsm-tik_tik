@@ -2,9 +2,9 @@ import React from 'react';
 import axios from 'axios';
 
 import { Video } from '../types';
+import VideoCard from '../components/VideoCard';
+import NoResults from '../components/NoResults';
 // import { BASE_URL } from '../utils';
-// import VideoCard from '../components/VideoCard';
-// import NoResults from '../components/NoResults';
 
 interface IProps {
   videos: Video[];
@@ -14,12 +14,9 @@ const Home = ({ videos }: IProps) => {
   return (
     <div className='flex flex-col gap-10 videos h-full'>
       {videos.length ? (
-        videos?.map((video: Video) => <></>
-          // <VideoCard post={video} isShowingOnHome key={video._id} />
-        )
+        videos?.map((video: Video) => <VideoCard post={video} isShowingOnHome key={video._id} />)
       ) : (
-          <></>
-        // <NoResults text={`No Videos`} />
+        <NoResults text={`No Videos`} />
       )}
     </div>
   );
