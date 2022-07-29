@@ -6,9 +6,9 @@ import { AiFillHome, AiOutlineMenu } from 'react-icons/ai';
 import { ImCancelCircle } from 'react-icons/im';
 import GoogleLogin from 'react-google-login';
 
-// import SuggestedAccounts from './SuggestedAccounts';
-// import Discover from './Discover';
-// import Footer from './Footer';
+import Discover from './Discover';
+import SuggestedAccounts from './SuggestedAccounts';
+import Footer from './Footer';
 // import useAuthStore from '../store/authStore';
 
 const Sidebar: NextPage = () => {
@@ -64,9 +64,9 @@ const Sidebar: NextPage = () => {
             )
           }
 
-          {/* <Discover />
-          <SuggestedAccounts fetchAllUsers={fetchAllUsers} allUsers={allUsers} />
-          <Footer /> */}
+          <Discover />
+          <SuggestedAccounts /* fetchAllUsers={fetchAllUsers} allUsers={allUsers} */ />
+          <Footer />
         </div>
       )}
     </div>
