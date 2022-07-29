@@ -36,4 +36,4 @@ yarn-error.log*
 tiktik-backend/node_modules/.bin/browserslist
 
 #
-utils/client.ts
+.env.development
