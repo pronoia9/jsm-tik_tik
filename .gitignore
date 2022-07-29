@@ -34,3 +34,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 tiktik-backend/node_modules/.bin/browserslist
+
+#
+utils/client.ts
