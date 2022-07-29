@@ -6,12 +6,13 @@ import axios from 'axios';
 // import { Video } from '../types';
 // import NoResults from '../components/NoResults';
 
-interface IProps {
-  videos: [];
-  // videos: Video[];
-}
+// interface IProps {
+//   // videos: Video[];
+//   videos: [];
+// }
 
-const Home = ({ videos }: IProps) => {
+// const Home = ({ videos }: IProps) => {
+const Home = () => {
   return (
     <div className='flex flex-col gap-10 videos h-full'>
       {/* {videos.length ? (
@@ -25,14 +26,19 @@ const Home = ({ videos }: IProps) => {
 
 export default Home;
 
-// export const getServerSideProps = async ({ query: { topic } }: { query: { topic: string } }) => {
-//   let response = await axios.get(`${BASE_URL}/api/post`);
+export const getServerSideProps = async ({ query: { topic } }: { query: { topic: string } }) => {
+  // let response = await axios.get(`${BASE_URL}/api/post`);
 
-//   if (topic) {
-//     response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
-//   }
+  // if (topic) {
+  //   // response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
+  //   response = await axios.get(`http://localhost:3000/api/discover/${topic}`);
+  // }
 
-//   return {
-//     props: { videos: response.data },
-//   };
-// };
+  // return {
+  //   props: { videos: response.data },
+  // };
+
+  // !TEMP
+  let { data } = await axios.get(`http://localhost:3000/api/post`);
+  return { props: { videos: data } };
+};
