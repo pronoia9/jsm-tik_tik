@@ -11,7 +11,7 @@ import { ImCancelCircle } from 'react-icons/im';
 // import useAuthStore from '../store/authStore';
 
 const Sidebar: NextPage = () => {
-  const [showSidebar, setShowSidebar] = useState(true);
+  const [showSidebar, setShowSidebar] = useState<Boolean>(true);
   // const { pathname } = useRouter();
   // const { fetchAllUsers, allUsers }: any = useAuthStore();
 
@@ -19,7 +19,7 @@ const Sidebar: NextPage = () => {
 
   return (
     <div id='sidebar-component'>
-      <div className='block xl:hidden m-2 ml-4 mt-3 text-xl' onClick={() => setShowSidebar(!showSidebar)}>
+      <div className='block xl:hidden m-2 ml-4 mt-3 text-xl' onClick={() => setShowSidebar((prev) => !prev)}>
         {showSidebar ? <ImCancelCircle /> : <AiOutlineMenu />}
       </div>
       {showSidebar && (
