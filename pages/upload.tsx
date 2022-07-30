@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
-// import { SanityAssetDocument } from '@sanity/client';
+import { SanityAssetDocument } from '@sanity/client';
 import { FaCloudUploadAlt } from 'react-icons/fa';
 import { MdDelete } from 'react-icons/md';
 import axios from 'axios';
@@ -11,13 +11,12 @@ import { client } from '../utils/client';
 // import { topics } from '../utils/constants';
 
 const Upload = () => {
+  const [loading, setLoading] = useState<Boolean>(false);
+  const [videoAsset, setVideoAsset] = useState<SanityAssetDocument | undefined>();
+  const [wrongFileType, setWrongFileType] = useState<Boolean>(false);
   // const [caption, setCaption] = useState('');
   // const [topic, setTopic] = useState<String>(topics[0].name);
-  const [loading, setLoading] = useState<Boolean>(false);
   // const [savingPost, setSavingPost] = useState<Boolean>(false);
-  // const [videoAsset, setVideoAsset] = useState<SanityAssetDocument | undefined>();
-  const [videoAsset, setVideoAsset] = useState();
-  // const [wrongFileType, setWrongFileType] = useState<Boolean>(false);
 
   // const userProfile: any = useAuthStore((state) => state.userProfile);
   // const router = useRouter();
@@ -27,25 +26,24 @@ const Upload = () => {
   // }, [userProfile, router]);
 
   const uploadVideo = async (e: any) => {
-    // const selectedFile = e.target.files[0];
-    // const fileTypes = ['video/mp4', 'video/webm', 'video/ogg'];
-    // // uploading asset to sanity
-    // if (fileTypes.includes(selectedFile.type)) {
-    //   setWrongFileType(false);
-    //   setLoading(true);
-    //   client.assets
-    //     .upload('file', selectedFile, {
-    //       contentType: selectedFile.type,
-    //       filename: selectedFile.name,
-    //     })
-    //     .then((data) => {
-    //       setVideoAsset(data);
-    //       setLoading(false);
-    //     });
-    // } else {
-    //   setLoading(false);
-    //   setWrongFileType(true);
-    // }
+    const selectedFile = e.target.files[0];
+    const fileTypes = ['video/mp4', 'video/webm', 'video/ogg'];
+
+    // check if the type is the right format
+    if (fileTypes.includes(selectedFile.type)) {
+      setWrongFileType(false);
+      setLoading(true);
+      // uploading asset to sanity
+      client.assets
+        .upload('file', selectedFile, { contentType: selectedFile.type, filename: selectedFile.name })
+        .then((data) => {
+          setVideoAsset(data);
+          setLoading(false);
+        });
+    } else {
+      setLoading(false);
+      setWrongFileType(true);
+    }
   };
 
   const handlePost = async () => {
