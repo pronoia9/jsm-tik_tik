@@ -8,7 +8,7 @@ import axios from 'axios';
 import useAuthStore from '../store/authStore';
 import { client } from '../utils/client';
 import { topics } from '../utils/constants';
-// import { BASE_URL } from '../utils';
+import { BASE_URL } from '../utils';
 
 const Upload = () => {
   const [loading, setLoading] = useState<Boolean>(false);
@@ -19,8 +19,9 @@ const Upload = () => {
   const [topic, setTopic] = useState<String>(topics[0].name);
   const [savingPost, setSavingPost] = useState<Boolean>(false);
 
-  // const userProfile: any = useAuthStore((state) => state.userProfile);
-  // const router = useRouter();
+  // get user profile from zustand
+  const userProfile: any = useAuthStore((state) => state.userProfile);
+  const router = useRouter();
 
   // useEffect(() => {
   //   if (!userProfile) router.push('/');
@@ -48,28 +49,28 @@ const Upload = () => {
   };
 
   const handlePost = async () => {
-    // if (caption && videoAsset?._id && topic) {
-    //   setSavingPost(true);
-    //   const doc = {
-    //     _type: 'post',
-    //     caption,
-    //     video: {
-    //       _type: 'file',
-    //       asset: {
-    //         _type: 'reference',
-    //         _ref: videoAsset?._id,
-    //       },
-    //     },
-    //     userId: userProfile?._id,
-    //     postedBy: {
-    //       _type: 'postedBy',
-    //       _ref: userProfile?._id,
-    //     },
-    //     topic,
-    //   };
-    //   await axios.post(`${BASE_URL}/api/post`, doc);
-    //   router.push('/');
-    // }
+    if (caption && videoAsset?._id && topic) {
+      setSavingPost(true);
+      const doc = {
+        _type: 'post',
+        caption,
+        video: {
+          _type: 'file',
+          asset: {
+            _type: 'reference',
+            _ref: videoAsset?._id,
+          },
+        },
+        userId: userProfile?._id,
+        postedBy: {
+          _type: 'postedBy',
+          _ref: userProfile?._id,
+        },
+        topic,
+      };
+      await axios.post(`${BASE_URL}/api/post`, doc);
+      router.push('/');
+    }
   };
 
   const handleDiscard = () => {
