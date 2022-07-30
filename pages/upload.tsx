@@ -133,16 +133,20 @@ const Upload = () => {
               </div>
             )}
           </div>
+
           {/* Wrong file type upload message */}
           {wrongFileType && (
             <p className='text-center text-xl text-red-400 font-semibold mt-4 w-[260px]'>
-              Please select an video file (mp4 or webm or ogg)
+              Please select an video file (.mp4, .webm or .ogg)
             </p>
           )}
         </div>
-        {/* <div className='flex flex-col gap-3 pb-10'>
+
+        {/* Right side form, video category, etc. */}
+        <div className='flex flex-col gap-3 pb-10'>
+          {/* Post title / caption */}
           <label className='text-md font-medium '>Caption</label>
-          <input
+          {/* <input
             type='text'
             value={caption}
             onChange={(e) => setCaption(e.target.value)}
@@ -178,8 +182,8 @@ const Upload = () => {
               className='bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none'>
               {savingPost ? 'Posting...' : 'Post'}
             </button>
-          </div>
-        </div> */}
+          </div> */}
+        </div>
       </div>
     </div>
   );
