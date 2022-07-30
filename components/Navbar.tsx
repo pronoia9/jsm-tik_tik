@@ -16,9 +16,7 @@ const Navbar = () => {
   // const [user, setUser] = useState<IUser | null>();
   // const [searchValue, setSearchValue] = useState('');
   // const router = useRouter();
-  // const { userProfile, addUser, removeUser } = useAuthStore();
-  const { userProfile, addUser } = useAuthStore();
-  console.log(userProfile);
+  const { userProfile, addUser, removeUser } = useAuthStore();
 
   // useEffect(() => {
   //   setUser(userProfile);
@@ -86,6 +84,7 @@ const Navbar = () => {
               className=' border-2 p-2 rounded-full cursor-pointer outline-none shadow-md'
               onClick={() => {
                 googleLogout();
+                removeUser();
               }}>
               <AiOutlineLogout color='red' fontSize={21} />
             </button>
