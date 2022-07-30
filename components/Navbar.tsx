@@ -81,7 +81,7 @@ const Navbar = () => {
             {/* Logout button */}
             <button
               type='button'
-              className=' border-2 p-2 rounded-full cursor-pointer outline-none shadow-md'
+              className='border-2 p-2 rounded-full cursor-pointer outline-none shadow-md'
               onClick={() => {
                 googleLogout();
                 removeUser();
