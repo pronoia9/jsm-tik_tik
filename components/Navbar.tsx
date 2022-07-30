@@ -9,7 +9,7 @@ import { IoMdAdd } from 'react-icons/io';
 
 // import useAuthStore from '../store/authStore';
 // import { IUser } from '../types';
-// import { createOrGetUser } from '../utils';
+import { createOrGetUser } from '../utils';
 import Logo from '../utils/tiktik-logo.png';
 
 const Navbar = () => {
@@ -87,7 +87,7 @@ const Navbar = () => {
           </div>
         ) : (
           <GoogleLogin
-            onSuccess={(response) => console.log(response) /*createOrGetUser(response, addUser)*/}
+            onSuccess={(response) => createOrGetUser(response, 'addUser')}
             onError={() => console.log('Login Failed')}
           />
         )}
