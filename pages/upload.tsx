@@ -149,7 +149,7 @@ const Upload = () => {
           <label className='text-md font-medium '>Caption</label>
           <input
             type='text'
-            value={'caption'}
+            value={caption}
             onChange={(e) => setCaption(e.target.value)}
             className='rounded lg:after:w-650 outline-none text-md border-2 border-gray-200 p-2'
           />
