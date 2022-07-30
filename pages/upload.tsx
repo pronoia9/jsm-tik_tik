@@ -168,7 +168,7 @@ const Upload = () => {
             ))}
           </select>
 
-          {/*
+          {/* Discord / Upload buttons */}
           <div className='flex gap-6 mt-10'>
             <button
               onClick={handleDiscard}
@@ -181,9 +181,9 @@ const Upload = () => {
               onClick={handlePost}
               type='button'
               className='bg-[#F51997] text-white text-md font-medium p-2 rounded w-28 lg:w-44 outline-none'>
-              {savingPost ? 'Posting...' : 'Post'}
+              {'savingPost' ? 'Posting...' : 'Post'}
             </button>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>
