@@ -133,11 +133,12 @@ const Upload = () => {
               </div>
             )}
           </div>
-          {/* {wrongFileType && (
+          {/* Wrong file type upload message */}
+          {wrongFileType && (
             <p className='text-center text-xl text-red-400 font-semibold mt-4 w-[260px]'>
               Please select an video file (mp4 or webm or ogg)
             </p>
-          )} */}
+          )}
         </div>
         {/* <div className='flex flex-col gap-3 pb-10'>
           <label className='text-md font-medium '>Caption</label>
