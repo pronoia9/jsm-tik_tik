@@ -14,9 +14,10 @@ const Upload = () => {
   const [loading, setLoading] = useState<Boolean>(false);
   const [videoAsset, setVideoAsset] = useState<SanityAssetDocument | undefined>();
   const [wrongFileType, setWrongFileType] = useState<Boolean>(false);
-  // const [caption, setCaption] = useState('');
-  // const [topic, setTopic] = useState<String>(topics[0].name);
-  // const [savingPost, setSavingPost] = useState<Boolean>(false);
+  // form / input states
+  const [caption, setCaption] = useState('');
+  const [topic, setTopic] = useState<String>(topics[0].name);
+  const [savingPost, setSavingPost] = useState<Boolean>(false);
 
   // const userProfile: any = useAuthStore((state) => state.userProfile);
   // const router = useRouter();
@@ -142,21 +143,21 @@ const Upload = () => {
           )}
         </div>
 
-        {/* Right side form, video category, etc. */}
+        {/* FORM - Right side form, video category, etc. */}
         <div className='flex flex-col gap-3 pb-10'>
           {/* Post title / caption */}
           <label className='text-md font-medium '>Caption</label>
           <input
             type='text'
             value={'caption'}
-            onChange={(e) => 'setCaption(e.target.value)'}
+            onChange={(e) => setCaption(e.target.value)}
             className='rounded lg:after:w-650 outline-none text-md border-2 border-gray-200 p-2'
           />
 
           {/* Category / topic */}
           <label className='text-md font-medium '>Choose a topic</label>
           <select
-            onChange={(e) => { 'setTopic(e.target.value)' }}
+            onChange={(e) => setTopic(e.target.value)}
             className='outline-none lg:w-650 border-2 border-gray-200 text-md capitalize lg:p-4 p-2 rounded cursor-pointer'>
             {topics.map((item) => (
               <option
