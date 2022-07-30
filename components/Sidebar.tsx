@@ -16,9 +16,6 @@ const Sidebar: NextPage = () => {
   // const { pathname } = useRouter();
   // const { fetchAllUsers, allUsers }: any = useAuthStore();
 
-  // !TEMP
-  const userProfile = false;
-
   return (
     <div id='sidebar-component'>
       <div className='block xl:hidden m-2 ml-4 mt-3 text-xl' onClick={() => setShowSidebar((prev) => !prev)}>
@@ -39,31 +36,6 @@ const Sidebar: NextPage = () => {
               </div>
             </Link>
           </div>
-          {
-            // !TEMP
-            !userProfile && (
-              <div className='px-2 py-4 hidden xl:block'>
-                <p className='text-gray-400'>Log in to like and comment on videos</p>
-                <div className='pr-4'>
-                  <GoogleLogin
-                    clientId=''
-                    render={(renderProps) => (
-                      <button
-                        className='cursor-pointer bg-white text-lg text-[#F51997] border-[1px] border-[#F51997] font-semibold px-6 py-3 rounded-md outline-none w-full mt-3 hover:text-white hover:bg-[#F51996]'
-                        onClick={renderProps.onClick}
-                        disabled={renderProps.disabled}>
-                        Log in
-                      </button>
-                    )}
-                    onSuccess={() => {}}
-                    onFailure={() => {}}
-                    cookiePolicy='single_host_origin'
-                  />
-                </div>
-              </div>
-            )
-          }
-
           <Discover />
           <SuggestedAccounts /* fetchAllUsers={fetchAllUsers} allUsers={allUsers} */ />
           <Footer />
