@@ -117,13 +117,13 @@ const Upload = () => {
                     <input type='file' name='upload-video' className='w-0 h-0' onChange={(e) => uploadVideo(e)} />
                   </label>
                 ) : (
-                  <div className=' rounded-3xl w-[300px]  p-4 flex flex-col gap-6 justify-center items-center'>
-                    {/* <video className='rounded-xl h-[462px] mt-16 bg-black' controls loop src={videoAsset?.url} />
-                    <div className=' flex justify-between gap-20'>
+                  <div className='rounded-3xl w-[300px] p-4 flex flex-col gap-6 justify-center items-center'>
+                    <video className='rounded-xl h-[462px] mt-16 bg-black' src={videoAsset?.url} loop controls />
+                    {/* <div className=' flex justify-between gap-20'>
                       <p className='text-lg'>{videoAsset.originalFilename}</p>
                       <button
                         type='button'
-                        className=' rounded-full bg-gray-200 text-red-400 p-2 text-xl cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out'
+                        className='rounded-full bg-gray-200 text-red-400 p-2 text-xl cursor-pointer outline-none hover:shadow-md transition-all duration-500 ease-in-out'
                         onClick={() => setVideoAsset(undefined)}>
                         <MdDelete />
                       </button>
