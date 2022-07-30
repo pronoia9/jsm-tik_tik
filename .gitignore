@@ -34,3 +34,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 tiktik-backend/node_modules/.bin/browserslist
+
+#
+public/favicon_package_v0.16
+public/favicon_package_v0.16.zip
+public/favicon_package_v0.16 (2)
+public/favicon_package_v0.16 (2).zip
