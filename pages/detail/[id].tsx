@@ -9,28 +9,27 @@ import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 
 import axios from 'axios';
 import { BASE_URL } from '../../utils';
+import { Video } from '../../types';
+// import useAuthStore from '../../store/authStore';
 // import Comments from '../../components/Comments';
 // import LikeButton from '../../components/LikeButton';
-// import useAuthStore from '../../store/authStore';
-import { Video } from '../../types';
 
-interface IProps {
-  postDetails: Video;
-}
+interface IProps { postDetails: Video; }
 
 const Detail = ({ postDetails }: IProps) => {
-  // const [post, setPost] = useState(postDetails);
+  const [post, setPost] = useState(postDetails);
   // const [isPlaying, setIsPlaying] = useState<boolean>(false);
   // const [isVideoMuted, setIsVideoMuted] = useState<boolean>(false);
   // const [isPostingComment, setIsPostingComment] = useState<boolean>(false);
   // const [comment, setComment] = useState<string>('');
 
-  // const videoRef = useRef<HTMLVideoElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   // const router = useRouter();
 
   // const { userProfile }: any = useAuthStore();
 
-  // if (!post) return null;
+  // !TEMP
+  if (!post) return null;
 
   const onVideoClick = () => {
     // if (isPlaying) {
@@ -81,9 +80,9 @@ const Detail = ({ postDetails }: IProps) => {
         <div className='flex w-full absolute left-0 top-0 bg-white flex-wrap lg:flex-nowrap'>
           <div className='relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-black-600'>
             <div className='opacity-90 absolute top-6 left-2 lg:left-6 flex gap-6 z-50'>
-              {/* <p className='cursor-pointer ' onClick={() => 'router.back()'}>
+              <p className='cursor-pointer ' onClick={() => 'router.back()'}>
                 <MdOutlineCancel className='text-white text-[35px] hover:opacity-90' />
-              </p> */}
+              </p>
             </div>
             <div className='relative'>
               <div className='lg:h-[100vh] h-[60vh]'>
