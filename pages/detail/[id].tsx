@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
-import { GoVerified } from 'react-icons/go';
-import { MdOutlineCancel } from 'react-icons/md';
+import { useRouter } from 'next/router';
+import { useEffect, useRef, useState } from 'react';
 import { BsFillPlayFill } from 'react-icons/bs';
-import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
+import { GoVerified } from 'react-icons/go';
+import { HiVolumeOff, HiVolumeUp } from 'react-icons/hi';
+import { MdOutlineCancel } from 'react-icons/md';
 
 import axios from 'axios';
-import { BASE_URL } from '../../utils';
-import { Video } from '../../types';
+import Comments from '../../components/Comments';
+import LikeButton from '../../components/LikeButton';
 import useAuthStore from '../../store/authStore';
-// import Comments from '../../components/Comments';
-// import LikeButton from '../../components/LikeButton';
+import { Video } from '../../types';
+import { BASE_URL } from '../../utils';
 
 interface IProps { postDetails: Video; }
 
@@ -127,9 +127,7 @@ const Detail = ({ postDetails }: IProps) => {
                     <div className='text-xl font-bold lowercase tracking-wider flex gap-2 items-center justify-center'>
                       {post.postedBy.userName.replace(/\s+/g, '')} <GoVerified className='text-blue-400 text-xl' />
                     </div>
-                    <p className='text-md'>
-                      {post.postedBy.userName}
-                    </p>
+                    <p className='text-md'>{post.postedBy.userName}</p>
                   </div>
                 </div>
               </Link>
@@ -141,19 +139,22 @@ const Detail = ({ postDetails }: IProps) => {
 
               <div className='mt-10 px-10'>
                 {userProfile && (
-                  // <LikeButton
-                  //   likes={post.likes}
-                  //   flex='flex'
-                  //   handleLike={() => handleLike(true)}
-                  //   handleDislike={() => handleLike(false)}
-                  // />
-                  <>LIKE BUTTON</>
-                )} 
+                  <LikeButton
+                    // likes={post.likes}
+                    // flex='flex'
+                    // handleLike={() => handleLike(true)}
+                    // handleDislike={() => handleLike(false)}
+                  />
+                )}
               </div>
 
-              <>COMMENTS</>
-              {/* <Comments comment={comment} setComment={setComment} addComment={addComment} comments={post.comments} isPostingComment={isPostingComment}
-              /> */}
+              <Comments
+                // comment={comment}
+                // setComment={setComment}
+                // addComment={addComment}
+                // comments={post.comments}
+                // isPostingComment={isPostingComment}
+              />
             </div>
           </div>
         </div>
