@@ -26,7 +26,7 @@ const LikeButton: NextPage = () => {
     <div className={`flex gap-6`}>
       <div className='mt-4 flex flex-col justify-center items-center cursor-pointer'>
         <div
-          className={`bg-primary rounded-full p-2 md:p-4${alreadyLiked && ' text-[#F51997]'}`}
+          className={`bg-primary rounded-full p-2 md:p-4${alreadyLiked ? ' text-[#F51997]' : ''}`}
           onClick={() => (alreadyLiked ? 'handleDislike' : 'handleLike')}>
           <MdFavorite className='text-lg md:text-2xl' />
         </div>
