@@ -41,13 +41,21 @@ const Detail = ({ postDetails }: IProps) => {
   }, [post, isVideoMuted]);
 
   const handleLike = async (like: boolean) => {
+    // if (userProfile) {
+    //   const res = await axios.put(`${BASE_URL}/api/like`, {
+    //     userId: userProfile._id,
+    //     postId: post._id,
+    //     like,
+    //   });
+    //   setPost({ ...post, likes: res.data.likes });
+    // }
     if (userProfile) {
-      const res = await axios.put(`${BASE_URL}/api/like`, {
+      const { data } = await axios.put(`${BASE_URL}/api/like`, {
         userId: userProfile._id,
         postId: post._id,
         like,
       });
-      setPost({ ...post, likes: res.data.likes });
+      setPost({ ...post, likes: data.likes });
     }
   };
 
@@ -140,8 +148,8 @@ const Detail = ({ postDetails }: IProps) => {
               <div className='mt-10 px-10'>
                 {userProfile && (
                   <LikeButton
-                    // likes={post.likes}
-                    // flex='flex'
+                    likes={post.likes}
+                    flex='flex'
                     handleLike={() => handleLike(true)}
                     handleDislike={() => handleLike(false)}
                   />
