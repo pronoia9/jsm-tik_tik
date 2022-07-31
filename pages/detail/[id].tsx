@@ -32,13 +32,8 @@ const Detail = ({ postDetails }: IProps) => {
   if (!post) return null;
 
   const onVideoClick = () => {
-    // if (isPlaying) {
-    //   videoRef?.current?.pause();
-    //   setIsPlaying(false);
-    // } else {
-    //   videoRef?.current?.play();
-    //   setIsPlaying(true);
-    // }
+    if (isPlaying) videoRef?.current?.pause(), setIsPlaying(false);
+    else videoRef?.current?.play(), setIsPlaying(true);
   };
 
   // useEffect(() => {
@@ -85,7 +80,7 @@ const Detail = ({ postDetails }: IProps) => {
                 <MdOutlineCancel className='text-white text-[35px] hover:opacity-90' />
               </p>
             </div>
-            
+
             <div className='relative'>
               {/* Video */}
               <div className='lg:h-[100vh] h-[60vh]'>
