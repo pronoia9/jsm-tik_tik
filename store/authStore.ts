@@ -9,6 +9,7 @@ const authStore = (set: any) => ({
   allUsers: [],
 
   addUser: (user: any) => set({ userProfile: user }),
+  
   removeUser: () => set({ userProfile: null }),
 
   fetchAllUsers: async () => {
