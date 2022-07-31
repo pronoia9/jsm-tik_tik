@@ -86,12 +86,12 @@ const Detail = ({ postDetails }: IProps) => {
             </div>
             <div className='relative'>
               <div className='lg:h-[100vh] h-[60vh]'>
-                {/* <video
+                <video
                   ref={videoRef}
                   src={post?.video?.asset.url}
                   className=' h-full cursor-pointer'
                   onClick={onVideoClick}
-                  loop></video> */}
+                  loop></video>
               </div>
 
               <div className='absolute top-[45%] left-[40%] cursor-pointer'>
