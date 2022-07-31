@@ -41,21 +41,13 @@ const Detail = ({ postDetails }: IProps) => {
   }, [post, isVideoMuted]);
 
   const handleLike = async (like: boolean) => {
-    // if (userProfile) {
-    //   const res = await axios.put(`${BASE_URL}/api/like`, {
-    //     userId: userProfile._id,
-    //     postId: post._id,
-    //     like,
-    //   });
-    //   setPost({ ...post, likes: res.data.likes });
-    // }
     if (userProfile) {
-      const { data } = await axios.put(`${BASE_URL}/api/like`, {
+      const res = await axios.put(`${BASE_URL}/api/like`, {
         userId: userProfile._id,
         postId: post._id,
         like,
       });
-      setPost({ ...post, likes: data.likes });
+      setPost({ ...post, likes: res.data.likes });
     }
   };
 
