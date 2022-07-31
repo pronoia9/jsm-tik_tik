@@ -12,12 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       ? await client
           .patch(postId)
           .setIfMissing({ likes: [] })
-          .insert('after', 'likes[-1]', [
-            {
-              _key: uuid(),
-              _ref: userId,
-            },
-          ])
+          .insert('after', 'likes[-1]', [{ _key: uuid(), _ref: userId }])
           .commit()
       : await client
           .patch(postId)
