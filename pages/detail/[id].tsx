@@ -100,20 +100,22 @@ const Detail = ({ postDetails }: IProps) => {
                   </button>
                 )}
               </div>
+
+              {/* Mute/unmute button */}
+              <div className='absolute bottom-5 lg:bottom-10 right-5 lg:right-10 cursor-pointer'>
+                {isVideoMuted ? (
+                  <button onClick={() => setIsVideoMuted(false)}>
+                    <HiVolumeOff className='text-white text-3xl lg:text-4xl' />
+                  </button>
+                ) : (
+                  <button onClick={() => setIsVideoMuted(true)}>
+                    <HiVolumeUp className='text-white text-3xl lg:text-4xl' />
+                  </button>
+                )}
+              </div>
             </div>
 
-            {/* Mute/unmute button */}
-            <div className='absolute bottom-5 lg:bottom-10 right-5 lg:right-10 cursor-pointer'>
-              {isVideoMuted ? (
-                <button onClick={() => setIsVideoMuted(false)}>
-                  <HiVolumeOff className='text-white text-3xl lg:text-4xl' />
-                </button>
-              ) : (
-                <button onClick={() => setIsVideoMuted(true)}>
-                  <HiVolumeUp className='text-white text-3xl lg:text-4xl' />
-                </button>
-              )}
-            </div>
+            {/* mute/unmute prev location */}
           </div>
           <div className='relative w-[1000px] md:w-[900px] lg:w-[700px]'>
             <div className='lg:mt-20 mt-10'>
