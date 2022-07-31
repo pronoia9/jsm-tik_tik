@@ -79,6 +79,7 @@ const Detail = ({ postDetails }: IProps) => {
               </p>
             </div>
 
+            {/* VIDEO + VIDEO BUTTONS */}
             <div className='relative'>
               {/* Video */}
               <div className='lg:h-[100vh] h-[60vh]'>
@@ -112,14 +113,16 @@ const Detail = ({ postDetails }: IProps) => {
                 )}
               </div>
             </div>
-
             {/* mute/unmute prev location */}
           </div>
+
+          {/* USER PROFILE */}
           <div className='relative w-[1000px] md:w-[900px] lg:w-[700px]'>
             <div className='lg:mt-20 mt-10'>
-              {/* <Link href={`/profile/${'post.postedBy._id'}`}>
+              {/* Account name + pic */}
+              <Link href={`/profile/${'post.postedBy._id'}`}>
                 <div className='flex gap-4 mb-4 bg-white w-full pl-10 cursor-pointer'>
-                  <Image width={60} height={60} alt='user-profile' className='rounded-full' src={'post.postedBy.image'} />
+                  <Image width={60} height={60} alt='user-profile' className='rounded-full' src={post.postedBy.image} />
                   <div>
                     <div className='text-xl font-bold lowercase tracking-wider flex gap-2 items-center justify-center'>
                       {post.postedBy.userName.replace(/\s+/g, '')} <GoVerified className='text-blue-400 text-xl' />
@@ -129,7 +132,7 @@ const Detail = ({ postDetails }: IProps) => {
                     </p>
                   </div>
                 </div>
-              </Link> */}
+              </Link>
               <div className='px-10'>
                 <p className=' text-md text-gray-600'>{/* {post.caption} */}</p>
               </div>
