@@ -35,7 +35,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
                 (user: IUser) =>
                   user._id === (item.postedBy._ref || item.postedBy._id) && (
                     <div className=' p-2 items-center' key={idx}>
-                      {/* <Link href={`/profile/${user._id}`}>
+                      <Link href={`/profile/${user._id}`}>
                         <div className='flex items-start gap-3'>
                           <div className='w-12 h-12'>
                             <Image
@@ -52,9 +52,9 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
                             {user.userName} <GoVerified className='text-blue-400' />
                           </p>
                         </div>
-                      </Link> */}
+                      </Link>
                       <div>
-                        {/* <p className='-mt-5 ml-16 text-[16px] mr-8'>{item.comment}</p> */}
+                        <p className='-mt-5 ml-16 text-[16px] mr-8'>{item.comment}</p>
                       </div>
                     </div>
                   )
