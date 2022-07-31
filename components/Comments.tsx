@@ -28,6 +28,7 @@ const Comments = () => {
 
   // !TEMP
   const comments = [];
+  const isPostingComment = false;
 
   return (
     <div className='border-t-2 border-gray-200 pt-4 px-10 mt-4 bg-[#F8F8F8] border-b-2 lg:pb-0 pb-[100px]'>
@@ -84,7 +85,7 @@ const Comments = () => {
             <button className='text-md text-gray-400 '
               // onClick={addComment}
             >
-              {'isPostingComment' ? 'Commenting...' : 'Comment'}
+              {isPostingComment ? 'Commenting...' : 'Comment'}
             </button>
           </form>
         </div>
