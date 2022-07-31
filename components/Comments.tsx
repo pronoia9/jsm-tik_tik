@@ -5,7 +5,7 @@ import { GoVerified } from 'react-icons/go';
 
 import useAuthStore from '../store/authStore';
 import NoResults from './NoResults';
-// import { IUser } from '../types';
+import { IUser } from '../types';
 
 interface IProps {
   isPostingComment: Boolean;
@@ -32,7 +32,7 @@ const Comments = ({ comment, setComment, addComment, comments, isPostingComment 
           comments?.map((item: IComment, idx: number) => (
             <>
               {allUsers?.map(
-                (user) =>
+                (user: IUser) =>
                   user._id === (item.postedBy._ref || item.postedBy._id) && (
                     <div className=' p-2 items-center' key={idx}>
                       {/* <Link href={`/profile/${user._id}`}>
