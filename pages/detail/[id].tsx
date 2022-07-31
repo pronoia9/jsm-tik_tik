@@ -14,12 +14,11 @@ import { BASE_URL } from '../../utils';
 // import useAuthStore from '../../store/authStore';
 import { Video } from '../../types';
 
-// interface IProps {
-//   postDetails: Video;
-// }
+interface IProps {
+  postDetails: Video;
+}
 
-const Detail = () => {
-// const Detail = ({ postDetails }: IProps) => {
+const Detail = ({ postDetails }: IProps) => {
   // const [post, setPost] = useState(postDetails);
   // const [isPlaying, setIsPlaying] = useState<boolean>(false);
   // const [isVideoMuted, setIsVideoMuted] = useState<boolean>(false);
