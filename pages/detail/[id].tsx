@@ -18,7 +18,7 @@ interface IProps { postDetails: Video; }
 
 const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
-  // const [isPlaying, setIsPlaying] = useState<boolean>(false);
+  const [isPlaying, setIsPlaying] = useState<boolean>(false);
   // const [isVideoMuted, setIsVideoMuted] = useState<boolean>(false);
   // const [isPostingComment, setIsPostingComment] = useState<boolean>(false);
   // const [comment, setComment] = useState<string>('');
@@ -95,11 +95,11 @@ const Detail = ({ postDetails }: IProps) => {
               </div>
 
               <div className='absolute top-[45%] left-[40%] cursor-pointer'>
-                {/* {!isPlaying && (
+                {!isPlaying && (
                   <button onClick={onVideoClick}>
                     <BsFillPlayFill className='text-white text-6xl lg:text-8xl' />
                   </button>
-                )} */}
+                )}
               </div>
             </div>
             <div className='absolute bottom-5 lg:bottom-10 right-5 lg:right-10 cursor-pointer'>
