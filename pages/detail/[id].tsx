@@ -10,7 +10,7 @@ import { HiVolumeUp, HiVolumeOff } from 'react-icons/hi';
 import axios from 'axios';
 import { BASE_URL } from '../../utils';
 import { Video } from '../../types';
-// import useAuthStore from '../../store/authStore';
+import useAuthStore from '../../store/authStore';
 // import Comments from '../../components/Comments';
 // import LikeButton from '../../components/LikeButton';
 
@@ -20,13 +20,13 @@ const Detail = ({ postDetails }: IProps) => {
   const [post, setPost] = useState(postDetails);
   const [isPlaying, setIsPlaying] = useState<boolean>(false);
   const [isVideoMuted, setIsVideoMuted] = useState<boolean>(false);
+  const { userProfile }: any = useAuthStore();
   // const [isPostingComment, setIsPostingComment] = useState<boolean>(false);
   // const [comment, setComment] = useState<string>('');
 
   const videoRef = useRef<HTMLVideoElement>(null);
   const router = useRouter();
 
-  // const { userProfile }: any = useAuthStore();
 
   // !TEMP
   if (!post) return null;
@@ -116,7 +116,7 @@ const Detail = ({ postDetails }: IProps) => {
             {/* mute/unmute prev location */}
           </div>
 
-          {/* USER PROFILE */}
+          {/* DETAILS PANEL (USER PROFILE + LIKE + COMMENTS) */}
           <div className='relative w-[1000px] md:w-[900px] lg:w-[700px]'>
             <div className='lg:mt-20 mt-10'>
               {/* Account name + pic */}
@@ -133,19 +133,25 @@ const Detail = ({ postDetails }: IProps) => {
                   </div>
                 </div>
               </Link>
+
+              {/* Post title / caption */}
               <div className='px-10'>
-                <p className=' text-md text-gray-600'>{/* {post.caption} */}</p>
+                <p className=' text-md text-gray-600'>{post.caption}</p>
               </div>
+
               <div className='mt-10 px-10'>
-                {/* {userProfile && (
-                  <LikeButton
-                    likes={post.likes}
-                    flex='flex'
-                    handleLike={() => handleLike(true)}
-                    handleDislike={() => handleLike(false)}
-                  />
-                )}  */}
+                {userProfile && (
+                  // <LikeButton
+                  //   likes={post.likes}
+                  //   flex='flex'
+                  //   handleLike={() => handleLike(true)}
+                  //   handleDislike={() => handleLike(false)}
+                  // />
+                  <>LIKE BUTTON</>
+                )} 
               </div>
+
+              <>COMMENTS</>
               {/* <Comments comment={comment} setComment={setComment} addComment={addComment} comments={post.comments} isPostingComment={isPostingComment}
               /> */}
             </div>
