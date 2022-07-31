@@ -24,7 +24,7 @@ const Detail = ({ postDetails }: IProps) => {
   // const [comment, setComment] = useState<string>('');
 
   const videoRef = useRef<HTMLVideoElement>(null);
-  // const router = useRouter();
+  const router = useRouter();
 
   // const { userProfile }: any = useAuthStore();
 
@@ -74,7 +74,7 @@ const Detail = ({ postDetails }: IProps) => {
           <div className='relative flex-2 w-[1000px] lg:w-9/12 flex justify-center items-center bg-black'>
             {/* Close/cancel button */}
             <div className='opacity-90 absolute top-6 left-2 lg:left-6 flex gap-6 z-50'>
-              <p className='cursor-pointer ' onClick={() => 'router.back()'}>
+              <p className='cursor-pointer ' onClick={() => router.back()}>
                 <MdOutlineCancel className='text-white text-[35px] hover:opacity-90' />
               </p>
             </div>
