@@ -31,11 +31,9 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
     }
   };
 
-  // useEffect(() => {
-  //   if (videoRef?.current) {
-  //     videoRef.current.muted = isVideoMuted;
-  //   }
-  // }, [isVideoMuted]);
+  useEffect(() => {
+    if (videoRef?.current) videoRef.current.muted = isVideoMuted;
+  }, [isVideoMuted]);
 
   // if (true || '!isShowingOnHome') {
   //   return (
