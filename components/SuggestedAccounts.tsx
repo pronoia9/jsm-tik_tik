@@ -4,9 +4,9 @@ import { NextPage } from 'next';
 import Link from 'next/link';
 import { GoVerified } from 'react-icons/go';
 
-// import { IUser } from '../types';
+import { IUser } from '../types';
 
-// interface IProps { fetchAllUsers: () => void; allUsers: IUser[]; }
+interface IProps { fetchAllUsers: () => void; allUsers: IUser[]; }
 
 //! TEMP
 import useAuthStore from '../store/authStore';
@@ -48,6 +48,12 @@ const SuggestedAccounts = () => {
             </div>
           </Link>
         ))} */}
+        {
+          // !TEMP
+          allUsers.slice(0, 6).map((user : IUser) => (
+            <Link href={`/profile/${user._id}`} key={user._id}></Link>
+          ))
+        }
       </div>
     </div>
   );
