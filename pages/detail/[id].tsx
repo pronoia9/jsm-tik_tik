@@ -36,11 +36,9 @@ const Detail = ({ postDetails }: IProps) => {
     else videoRef?.current?.play(), setIsPlaying(true);
   };
 
-  // useEffect(() => {
-  //   if (post && videoRef?.current) {
-  //     videoRef.current.muted = isVideoMuted;
-  //   }
-  // }, [post, isVideoMuted]);
+  useEffect(() => {
+    if (post && videoRef?.current) videoRef.current.muted = isVideoMuted;
+  }, [post, isVideoMuted]);
 
   const handleLike = async (like: boolean) => {
     // if (userProfile) {
