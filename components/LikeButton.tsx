@@ -5,14 +5,13 @@ import { MdFavorite } from 'react-icons/md';
 import useAuthStore from '../store/authStore';
 
 interface IProps {
-  // likes: any;
-  // flex: string;
+  likes: any;
+  flex: string;
   handleLike: () => void;
   handleDislike: () => void;
 }
 
-const LikeButton: NextPage<IProps> = ({ handleLike, handleDislike }) => {
-  // const LikeButton: NextPage<IProps> = ({ likes, flex, handleLike, handleDislike }) => {
+const LikeButton: NextPage<IProps> = ({ likes, flex, handleLike, handleDislike }) => {
   const [alreadyLiked, setAlreadyLiked] = useState(false);
   const { userProfile }: any = useAuthStore();
   // let filterLikes = likes?.filter((item: any) => item._ref === userProfile?._id);
