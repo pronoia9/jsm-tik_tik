@@ -14,7 +14,7 @@ import Logo from '../utils/tiktik-logo.png';
 
 const Navbar = () => {
   // const [user, setUser] = useState<IUser | null>();
-  // const router = useRouter();
+  const router = useRouter();
   const { userProfile, addUser, removeUser } = useAuthStore();
   const [searchValue, setSearchValue] = useState('');
 
@@ -23,10 +23,8 @@ const Navbar = () => {
   // }, [userProfile]);
 
   const handleSearch = (e: { preventDefault: () => void }) => {
-    // e.preventDefault();
-    // if (searchValue) {
-    //   router.push(`/search/${searchValue}`);
-    // }
+    e.preventDefault();
+    if (searchValue)  router.push(`/search/${searchValue}`);
   };
 
   return (
