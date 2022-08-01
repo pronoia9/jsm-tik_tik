@@ -13,11 +13,11 @@ interface IProps { data: { user: IUser; userVideos: Video[]; userLikedVideos: Vi
 const Profile = ({ data }: IProps) => {
   console.log(data);
   const { user, userVideos, userLikedVideos } = data;
-  // const [showUserVideos, setShowUserVideos] = useState<Boolean>(true);
+  const [showUserVideos, setShowUserVideos] = useState<Boolean>(true);
+  const videos = showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
+  const liked = !showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
   // const [videosList, setVideosList] = useState<Video[]>([]);
-  // const videos = showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
-  // const liked = !showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
-
+  
   // useEffect(() => {
   //   const fetchVideos = async () => {
   //     if (showUserVideos) setVideosList(userVideos);
@@ -51,10 +51,14 @@ const Profile = ({ data }: IProps) => {
       </div>
       <div>
         <div className='flex gap-10 mb-10 mt-10 border-b-2 border-gray-200 bg-white w-full'>
-          <p className={`text-xl font-semibold cursor-pointer ${'videos'} mt-2`} onClick={() => 'setShowUserVideos(true)'}>
+          <p
+            className={`text-xl font-semibold cursor-pointer mt-2 ${videos}`}
+            onClick={() => 'setShowUserVideos(true)'}>
             Videos
           </p>
-          <p className={`text-xl font-semibold cursor-pointer ${'liked'} mt-2`} onClick={() => 'setShowUserVideos(false)'}>
+          <p
+            className={`text-xl font-semibold cursor-pointer mt-2 ${liked}`}
+            onClick={() => 'setShowUserVideos(false)'}>
             Liked
           </p>
         </div>
