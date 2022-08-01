@@ -13,14 +13,14 @@ import { IUser, Video } from '../../types';
 
 const Search = ({ videos }: { videos: Video[] }) => {
   const [isAccounts, setIsAccounts] = useState(false);
-  // const { allUsers }: { allUsers: IUser[] } = useAuthStore();
+  const { allUsers }: { allUsers: IUser[] } = useAuthStore();
 
   const router = useRouter();
   const { searchTerm }: any = router.query;
 
   const accounts = isAccounts ? 'border-b-2 border-black' : 'text-gray-400';
   const isVideos = !isAccounts ? 'border-b-2 border-black' : 'text-gray-400';
-  // const searchedAccounts = allUsers?.filter((user: IUser) => user.userName.toLowerCase().includes(searchTerm));
+  const searchedAccounts = allUsers?.filter((user: IUser) => user.userName.toLowerCase().includes(searchTerm));
 
   return (
     <div className='w-full  '>
