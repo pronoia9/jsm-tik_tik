@@ -10,11 +10,10 @@ import { Video } from './../types';
 
 interface IProps {
   post: Video;
-  // isShowingOnHome?: boolean;
+  isShowingOnHome?: boolean;
 }
 
-const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes } }) => {
-  // const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes }, isShowingOnHome }) => {
+  const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, likes }, isShowingOnHome }) => {
   const [isHover, setIsHover] = useState(false);
   const [playing, setPlaying] = useState(false);
   const [isVideoMuted, setIsVideoMuted] = useState(false);
