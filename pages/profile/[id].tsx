@@ -10,7 +10,7 @@ import { BASE_URL } from '../../utils';
 
 interface IProps { data: { user: IUser; userVideos: Video[]; userLikedVideos: Video[]; }; }
 
-const Profile = ({ data }: any) => {
+const Profile = ({ data }: IProps) => {
   // const [showUserVideos, setShowUserVideos] = useState<Boolean>(true);
   // const [videosList, setVideosList] = useState<Video[]>([]);
 
