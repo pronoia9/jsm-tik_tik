@@ -23,9 +23,9 @@ const Upload = () => {
   const userProfile: any = useAuthStore((state) => state.userProfile);
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (!userProfile) router.push('/');
-  // }, [userProfile, router]);
+  useEffect(() => {
+    if (!userProfile) router.push('/');
+  }, [userProfile, router]);
 
   const uploadVideo = async (e: any) => {
     const selectedFile = e.target.files[0];
@@ -74,10 +74,10 @@ const Upload = () => {
   };
 
   const handleDiscard = () => {
-    // setSavingPost(false);
-    // setVideoAsset(undefined);
-    // setCaption('');
-    // setTopic('');
+    setSavingPost(false);
+    setVideoAsset(undefined);
+    setCaption('');
+    setTopic('');
   };
 
   return (
@@ -121,7 +121,7 @@ const Upload = () => {
                 ) : (
                   <div className='rounded-3xl w-[300px] p-4 flex flex-col gap-6 justify-center items-center'>
                     <video className='rounded-xl h-[462px] mt-16 bg-black' src={videoAsset?.url} loop controls />
-                    {/* <div className='flex justify-between gap-20'>
+                    <div className='flex justify-between gap-20'>
                       <p className='text-lg'>{videoAsset.originalFilename}</p>
                       <button
                         type='button'
@@ -129,7 +129,7 @@ const Upload = () => {
                         onClick={() => setVideoAsset(undefined)}>
                         <MdDelete />
                       </button>
-                    </div> */}
+                    </div>
                   </div>
                 )}
               </div>
