@@ -34,24 +34,24 @@ interface IProps {
     if (videoRef?.current) videoRef.current.muted = isVideoMuted;
   }, [isVideoMuted]);
 
-  if (true || '!isShowingOnHome') {
-    return (
-      <div>
-         <Link href={`/detail/${_id}`}>
-          <video loop src={video.asset.url} className='w-[250px] md:w-full rounded-xl cursor-pointer'></video>
-        </Link>
-        <div className='flex gap-2 -mt-8 items-center ml-4'>
-          <p className='text-white text-lg font-medium flex gap-1 items-center'>
-            <BsPlay className='text-2xl' />
-            {likes?.length || 0}
-          </p>
-        </div>
-        <Link href={`/detail/${_id}`}>
-          <p className='mt-5 text-md text-gray-800 cursor-pointer w-210'>{caption}</p>
-        </Link>
-      </div>
-    );
-  }
+  // if (true || '!isShowingOnHome') {
+  //   return (
+  //     <div>
+  //        <Link href={`/detail/${_id}`}>
+  //         <video loop src={video.asset.url} className='w-[250px] md:w-full rounded-xl cursor-pointer'></video>
+  //       </Link>
+  //       <div className='flex gap-2 -mt-8 items-center ml-4'>
+  //         <p className='text-white text-lg font-medium flex gap-1 items-center'>
+  //           <BsPlay className='text-2xl' />
+  //           {likes?.length || 0}
+  //         </p>
+  //       </div>
+  //       <Link href={`/detail/${_id}`}>
+  //         <p className='mt-5 text-md text-gray-800 cursor-pointer w-210'>{caption}</p>
+  //       </Link>
+  //     </div>
+  //   );
+  // }
 
   return (
     <div id={`video-card-${_id}`} className='flex flex-col border-b-2 border-gray-200 pb-6'>
