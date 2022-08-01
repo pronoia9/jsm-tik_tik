@@ -8,16 +8,8 @@ import { IUser } from '../types';
 
 interface IProps { fetchAllUsers: () => void; allUsers: IUser[]; }
 
-//! TEMP
-import useAuthStore from '../store/authStore';
-
-// const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
-const SuggestedAccounts = () => {
-  //! TEMP
-  const { fetchAllUsers, allUsers } = useAuthStore();
-
+const SuggestedAccounts: NextPage<IProps> = ({ fetchAllUsers, allUsers }) => {
   useEffect(() => { fetchAllUsers(); }, [fetchAllUsers]);
-
   const users = allUsers?.sort(() => 0.5 - Math.random()).slice(0, allUsers.length);
 
   return (

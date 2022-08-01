@@ -9,12 +9,12 @@ import GoogleLogin from 'react-google-login';
 import Discover from './Discover';
 import SuggestedAccounts from './SuggestedAccounts';
 import Footer from './Footer';
-// import useAuthStore from '../store/authStore';
+import useAuthStore from '../store/authStore';
 
 const Sidebar: NextPage = () => {
   const [showSidebar, setShowSidebar] = useState<Boolean>(true);
-  // const { pathname } = useRouter();
-  // const { fetchAllUsers, allUsers }: any = useAuthStore();
+  const { pathname } = useRouter();
+  const { fetchAllUsers, allUsers }: any = useAuthStore();
 
   return (
     <div id='sidebar-component'>
@@ -26,9 +26,7 @@ const Sidebar: NextPage = () => {
           <div className='xl:border-b-2 border-gray-200 xl:pb-4'>
             <Link href='/'>
               <div
-                className={
-                  `flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded  text-[#F51997]` /* ${pathname === '/' && ' text-[#F51997]'} */
-                }>
+                className={`flex items-center gap-3 hover:bg-primary p-3 justify-center xl:justify-start cursor-pointer font-semibold rounded  text-[#F51997] ${pathname === '/' && ' text-[#F51997]'}`}>
                 <p className='text-2xl'>
                   <AiFillHome />
                 </p>
@@ -37,7 +35,7 @@ const Sidebar: NextPage = () => {
             </Link>
           </div>
           <Discover />
-          <SuggestedAccounts /* fetchAllUsers={fetchAllUsers} allUsers={allUsers} */ />
+          <SuggestedAccounts fetchAllUsers={fetchAllUsers} allUsers={allUsers} />
           <Footer />
         </div>
       )}
