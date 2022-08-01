@@ -25,18 +25,7 @@ const Home = ({ videos }: IProps) => {
 export default Home;
 
 export const getServerSideProps = async ({ query: { topic } }: { query: { topic: string } }) => {
-  // let response = await axios.get(`${BASE_URL}/api/post`);
-
-  // if (topic) {
-  //   // response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
-  //   response = await axios.get(`http://localhost:3000/api/discover/${topic}`);
-  // }
-
-  // return {
-  //   props: { videos: response.data },
-  // };
-
-  // !TEMP
-  let { data } = await axios.get(`${BASE_URL}/api/post`);
-  return { props: { videos: data } };
+  let response = await axios.get(`${BASE_URL}/api/post`);
+  if (topic) response = await axios.get(`${BASE_URL}/api/discover/${topic}`);
+  return { props: { videos: response.data }, };
 };
