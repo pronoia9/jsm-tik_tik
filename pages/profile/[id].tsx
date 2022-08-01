@@ -8,7 +8,7 @@ import NoResults from '../../components/NoResults';
 import { IUser, Video } from '../../types';
 import { BASE_URL } from '../../utils';
 
-// interface IProps { data: { user: IUser; userVideos: Video[]; userLikedVideos: Video[]; }; }
+interface IProps { data: { user: IUser; userVideos: Video[]; userLikedVideos: Video[]; }; }
 
 const Profile = ({ data }: any) => {
   // const [showUserVideos, setShowUserVideos] = useState<Boolean>(true);
