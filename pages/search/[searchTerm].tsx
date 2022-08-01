@@ -69,9 +69,9 @@ const Search = ({ videos }: { videos: Video[] }) => {
   );
 };
 
-// export const getServerSideProps = async ({ params: { searchTerm } }: { params: { searchTerm: string } }) => {
-//   const res = await axios.get(`${BASE_URL}/api/search/${searchTerm}`);
-//   return { props: { videos: res.data }, };
-// };
+export const getServerSideProps = async ({ params: { searchTerm } }: { params: { searchTerm: string } }) => {
+  const res = await axios.get(`${BASE_URL}/api/search/${searchTerm}`);
+  return { props: { videos: res.data }, };
+};
 
 export default Search;
