@@ -60,7 +60,7 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
         <div className='flex gap-3 p-2 cursor-pointer font-semibold rounded '>
           <div className='md:w-16 md:h-16 w-10 h-10'>
             {/* Avatar */}
-            <Link href={`/profile/\${postedBy?._id}`}>
+            <Link href={`/profile/${postedBy?._id}`}>
               <>
                 <Image width={62} height={62} className='rounded-full' src={postedBy?.image} alt='user-profile' layout='responsive' />
               </>
@@ -68,7 +68,7 @@ const VideoCard: NextPage<IProps> = ({ post: { caption, postedBy, video, _id, li
           </div>
           <div>
             {/* Username */}
-            <Link href={`/profile/\${postedBy?._id}`}>
+            <Link href={`/profile/${postedBy?._id}`}>
               <div className='flex items-center gap-2'>
                 <p className='flex gap-2 items-center md:text-md font-bold text-primary'>
                   {postedBy.userName} <GoVerified className='text-blue-400 text-md' />
