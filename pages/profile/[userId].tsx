@@ -16,7 +16,7 @@ const Profile = ({ data }: IProps) => {
   const [showUserVideos, setShowUserVideos] = useState<Boolean>(true);
   const videos = showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
   const liked = !showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
-  // const [videosList, setVideosList] = useState<Video[]>([]);
+  const [videosList, setVideosList] = useState<Video[]>([]);
   
   // useEffect(() => {
   //   const fetchVideos = async () => {
@@ -63,11 +63,11 @@ const Profile = ({ data }: IProps) => {
           </p>
         </div>
         <div className='flex gap-6 flex-wrap md:justify-start'>
-          {/* {videosList.length > 0 ? (
+          {videosList.length > 0 ? (
             videosList.map((post: Video, idx: number) => <VideoCard key={idx} post={post} />)
           ) : (
             <NoResults text={`No ${showUserVideos ? '' : 'Liked'} Videos Yet`} />
-          )} */}
+          )}
         </div>
       </div>
     </div>
