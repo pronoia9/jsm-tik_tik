@@ -15,8 +15,8 @@ const Search = ({ videos }: { videos: Video[] }) => {
   const [isAccounts, setIsAccounts] = useState(false);
   // const { allUsers }: { allUsers: IUser[] } = useAuthStore();
 
-  // const router = useRouter();
-  // const { searchTerm }: any = router.query;
+  const router = useRouter();
+  const { searchTerm }: any = router.query;
 
   const accounts = isAccounts ? 'border-b-2 border-black' : 'text-gray-400';
   const isVideos = !isAccounts ? 'border-b-2 border-black' : 'text-gray-400';
@@ -61,7 +61,7 @@ const Search = ({ videos }: { videos: Video[] }) => {
           {videos.length ? (
             videos.map((post: Video, idx: number) => <VideoCard post={post} key={idx} />)
           ) : (
-            <NoResults text={`No Video Results for ${'searchTerm'}`} />
+            <NoResults text={`No video results for ${searchTerm}`} />
           )}
         </div>
       )}
