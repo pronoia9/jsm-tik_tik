@@ -32,9 +32,9 @@ const Search = ({ videos }: { videos: Video[] }) => {
           Videos
         </p>
       </div>
-      {/* {isAccounts ? (
+      {isAccounts ? (
         <div className='md:mt-16'>
-          {searchedAccounts.length > 0 ? (
+          {/* {searchedAccounts.length > 0 ? (
             searchedAccounts.map((user: IUser, idx: number) => (
               <Link key={idx} href={`/profile/${user._id}`}>
                 <div className=' flex gap-3 p-2 cursor-pointer font-semibold rounded border-b-2 border-gray-200'>
@@ -54,17 +54,17 @@ const Search = ({ videos }: { videos: Video[] }) => {
             ))
           ) : (
             <NoResults text={`No Account Results for ${searchTerm}`} />
-          )}
+          )} */}
         </div>
       ) : (
         <div className='md:mt-16 flex flex-wrap gap-6 md:justify-start '>
           {videos.length ? (
             videos.map((post: Video, idx: number) => <VideoCard post={post} key={idx} />)
           ) : (
-            <NoResults text={`No Video Results for ${searchTerm}`} />
+            <NoResults text={`No Video Results for ${'searchTerm'}`} />
           )}
         </div>
-      )} */}
+      )}
     </div>
   );
 };
