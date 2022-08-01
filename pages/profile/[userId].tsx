@@ -12,7 +12,7 @@ interface IProps { data: { user: IUser; userVideos: Video[]; userLikedVideos: Vi
 
 const Profile = ({ data }: IProps) => {
   console.log(data);
-  // const { user, userVideos, userLikedVideos } = data;
+  const { user, userVideos, userLikedVideos } = data;
   // const [showUserVideos, setShowUserVideos] = useState<Boolean>(true);
   // const [videosList, setVideosList] = useState<Video[]>([]);
   // const videos = showUserVideos ? 'border-b-2 border-black' : 'text-gray-400';
@@ -31,14 +31,14 @@ const Profile = ({ data }: IProps) => {
     <div className='w-full'>
       <div className='flex gap-6 md:gap-10 mb-4 bg-white w-full'>
         <div className='w-16 h-16 md:w-32 md:h-32'>
-          {/* <Image
+          <Image
             width={120}
             height={120}
             layout='responsive'
             className='rounded-full'
             src={user.image}
             alt='user-profile'
-          /> */}
+          />
         </div>
 
         <div>
